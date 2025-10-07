@@ -1,0 +1,335 @@
+/* VARIABLES DE COLOR */
+:root {
+    --color-primary: #8b4513; /* Marrón tierra, como la corteza del pan */
+    --color-secondary: #f4a460; /* Color cálido, como pan recién horneado */
+    --color-background: #fdf5e6; /* Beige muy claro */
+    --color-text: #4a4a4a;
+    --color-white: #ffffff;
+}
+
+/* RESET Y FUENTES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-primary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* ESTILOS DE BOTONES */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    border: 2px solid transparent;
+}
+
+.btn.primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn.primary:hover {
+    background-color: #6d350c; /* Marrón más oscuro */
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn.secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* ======================== */
+/* NAVEGACIÓN (HEADER) */
+/* ======================== */
+header {
+    background-color: var(--color-white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a {
+    padding: 0.5rem 1rem;
+    display: block;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--color-secondary);
+}
+
+/* Menú Hamburguesa (Móvil) */
+.hamburger, .menu-toggle {
+    display: none; /* Oculto en desktop */
+}
+
+/* ======================== */
+/* SECCIÓN HERO (INICIO) */
+/* ======================== */
+.hero {
+    background: url('img/hero_pan.jpg') center/cover no-repeat; /* Cambia 'hero_pan.jpg' por tu imagen */
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-white);
+    position: relative;
+}
+
+/* Overlay para mejor legibilidad del texto */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    margin: 1rem 0;
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* ======================== */
+/* SECCIÓN MENÚ DESTACADO */
+/* ======================== */
+.menu-section {
+    padding: 5rem 5%;
+    background-color: var(--color-white);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.menu-item {
+    text-align: center;
+    background-color: var(--color-background);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.menu-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+/* ======================== */
+/* SECCIÓN SOBRE NOSOTROS */
+/* ======================== */
+.about-section {
+    padding: 5rem 5%;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-image {
+    width: 40%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================== */
+/* FOOTER Y CONTACTO */
+/* ======================== */
+.footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 3rem 5%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.footer .section-title {
+    color: var(--color-white);
+    text-align: left;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.social-links a {
+    color: var(--color-white);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--color-secondary);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+
+/* ======================== */
+/* MEDIA QUERIES (RESPONSIVIDAD) */
+/* ======================== */
+
+/* Estilos para Tablet y Móvil (Pantallas menores a 992px) */
+@media (max-width: 992px) {
+    
+    /* Hero */
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+
+    /* Sobre Nosotros */
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-image {
+        width: 100%;
+        max-width: 450px;
+    }
+    
+    /* Menú */
+    .nav-links {
+        position: fixed;
+        top: 65px; /* Altura del header */
+        left: 0;
+        background-color: var(--color-primary);
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        padding-top: 2rem;
+    }
+
+    .nav-links li a {
+        color: var(--color-white);
+        padding: 1rem 5%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+    }
+
+    /* Menú Hamburguesa */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--color-primary);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    /* Mostrar Menú */
+    #menu-toggle:checked ~ .nav-links {
+        transform: translateX(0);
+    }
+}
+
+/* Estilos adicionales para Móviles Pequeños (max-width: 576px) */
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0.75rem 5%;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
