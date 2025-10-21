@@ -257,10 +257,8 @@ header {
 /* ======================== */
 /* MEDIA QUERIES (RESPONSIVIDAD) */
 /* ======================== */
-
 /* Estilos para Tablet y Móvil (Pantallas menores a 992px) */
 @media (max-width: 992px) {
-    
     /* Hero */
     .hero-content h2 {
         font-size: 3rem;
@@ -271,12 +269,12 @@ header {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .about-image {
         width: 100%;
         max-width: 450px;
     }
-    
+
     /* Menú */
     .nav-links {
         position: fixed;
@@ -312,7 +310,7 @@ header {
         background-color: var(--color-primary);
         transition: all 0.3s ease-in-out;
     }
-    
+
     /* Mostrar Menú */
     #menu-toggle:checked ~ .nav-links {
         transform: translateX(0);
@@ -324,12 +322,69 @@ header {
     .navbar {
         padding: 0.75rem 5%;
     }
-    
+
     .hero-content h2 {
         font-size: 2.5rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
+    }
+}
+
+/* ======================== */
+/* ESTILOS PARA LA PÁGINA MICHICONCHAS */
+/* ======================== */
+
+.product-page {
+    padding: 2rem 5%;
+}
+
+.product-detail {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.product-image {
+    width: 50%;
+}
+
+.product-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+    width: 50%;
+}
+
+.product-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.product-ingredients {
+    font-style: italic;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.product-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Ajuste para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+    }
+
+    .product-image,
+    .product-info {
+        width: 100%;
     }
 }
