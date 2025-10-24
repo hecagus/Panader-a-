@@ -92,6 +92,24 @@ a:focus {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* NUEVO ESTILO: Botón "Explorar Menú" como zona gris */
+.btn.explore-menu-btn {
+    /* Color gris semi-transparente */
+    background-color: rgba(153, 153, 153, 0.6); 
+    color: var(--color-white);
+    border: 2px solid var(--color-white); 
+    /* Opcional: Un pequeño efecto de desenfoque */
+    backdrop-filter: blur(2px); 
+}
+
+.btn.explore-menu-btn:hover,
+.btn.explore-menu-btn:focus {
+    background-color: rgba(153, 153, 153, 0.8); 
+    color: var(--color-white);
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
 /* ======================== */
 /* NAVEGACIÓN (HEADER) */
 /* ======================== */
@@ -104,17 +122,12 @@ header {
 }
 
 .navbar {
-    /* Elimina grid-area: logo */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 5%;
     min-height: 60px;
-    /* Elimina position: absolute */
-    /* Elimina top: 0 */
-    /* Elimina left: 0 */
     width: 100%;
-    /* Elimina z-index: 1 */
 }
 
 .logo {
@@ -152,36 +165,37 @@ header {
 }
 
 /* ======================== */
-/* SECCIÓN HERO (INICIO) */
+/* SECCIÓN HERO (INICIO) - CAMBIOS PRINCIPALES APLICADOS AQUÍ */
 /* ======================== */
 .hero {
-    background: url('imagenes/hero_pan.jpg') center/cover no-repeat; /* Asegúrate de que la ruta sea correcta */
+    background: url('imagenes/hero_pan.jpg') center/cover no-repeat;
     height: 60vh;
-    /* Elimina display: grid */
-    /* Elimina grid-template-columns */
-    /* Elimina grid-template-rows */
-    /* Elimina grid-template-areas */
     align-items: center;
     text-align: center;
     color: var(--color-white);
-    position: relative;
+    position: relative; /* ¡CLAVE! Establece el contexto para el z-index */
     padding: 0;
-    display: flex; /* Añade flexbox para centrar verticalmente */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    overflow: hidden; /* Para que el logo no se salga del contenedor */
-    /* background-color: #f0f0f0;  Quita o comenta esta línea si existe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-/* Posicionamiento absoluto del logo */
-.hero .logo-image {
+/* Contenedor del logo: Posicionamiento para el efecto detrás del texto */
+.hero .logo-container {
     position: absolute;
-    top: 10px; /* Ajusta la posición vertical */
-    left: 10px; /* Ajusta la posición horizontal */
-    width: 20%; /* Ajusta el ancho del logo */
-    height: auto; /* Ajusta la altura automáticamente */
-    object-fit: contain; /* cover o contain, según prefieras */
-    z-index: 1; /* Detrás del contenido */
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste fino de centrado */
+    z-index: 1; /* ¡CLAVE! Lo pone detrás del hero-content y del overlay */
+    max-width: 60%; /* Ajusta el tamaño para que sea un logo grande de fondo */
+    opacity: 0.8; 
+}
+
+.hero .logo-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* Overlay para mejor legibilidad del texto */
@@ -197,9 +211,8 @@ header {
 }
 
 .hero-content {
-    /* Elimina grid-area: content */
     position: relative;
-    z-index: 3; /* Encima de todo */
+    z-index: 3; /* ¡CLAVE! Lo pone encima del logo y del overlay */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -341,6 +354,16 @@ header {
     .hero-content h2 {
         font-size: 3rem;
     }
+    
+    /* Ajuste del logo para móvil, si es necesario, lo puedes reducir.
+       Si quieres que en móvil el logo vuelva a la esquina, usa esta regla:
+    .hero .logo-container {
+        top: 10px; 
+        left: 10px;
+        transform: translate(0, 0); 
+        max-width: 20%; 
+    } 
+    */
 
     /* Sobre Nosotros */
     .about-section {
@@ -383,5 +406,28 @@ header {
 
     .hamburger .line {
         display: block;
-        width: 
-        
+        width: 25px; /* Tu código original estaba incompleto aquí. Asumo 25px. */
+        height: 3px;
+        margin: 5px;
+        background-color: var(--color-bread-crust);
+        transition: all 0.3s ease;
+    }
+    
+    /* Mostrar el menú al marcar el checkbox */
+    .menu-toggle:checked ~ .nav-links {
+        transform: translateX(0);
+    }
+    
+    /* Animación de la hamburguesa (opcional) */
+    .menu-toggle:checked ~ .hamburger .line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .menu-toggle:checked ~ .hamburger .line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle:checked ~ .hamburger .line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
