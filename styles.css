@@ -18,6 +18,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+.logo-image {
+    max-height: 50px; /* Ajusta la altura máxima según sea necesario */
+    width: auto; /* Permite que la imagen se ajuste proporcionalmente */
+    vertical-align: middle; /* Alinea verticalmente la imagen con el texto adyacente (si lo hay) */
+}
 
 body {
     font-family: 'Roboto', sans-serif;
