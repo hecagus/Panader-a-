@@ -20,17 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
     addToCartButtons.forEach(button => {
         button.addEventListener('click', function(event) {
             event.preventDefault(); // Evita que el enlace recargue la página
-
             const productDetail = this.closest('.product-detail') || this.closest('.menu-item'); // Encuentra el contenedor del producto
-
             let productName, productImage;
 
             if (productDetail.querySelector('.section-title')) {
-                 productName = productDetail.querySelector('.section-title').textContent;
-                 productImage = productDetail.querySelector('.product-image img').src;
+                productName = productDetail.querySelector('.section-title').textContent;
+                productImage = productDetail.querySelector('.product-image img').src;
             } else {
-                 productName = productDetail.querySelector('h3').textContent;
-                 productImage = productDetail.querySelector('img').src;
+                productName = productDetail.querySelector('h3').textContent;
+                productImage = productDetail.querySelector('img').src;
             }
 
             // Guarda la información en localStorage
