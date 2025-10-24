@@ -107,7 +107,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 5%; /* Reducido el padding vertical */
+    padding: 0.5rem 5%;
+    min-height: 60px; /* Asegura una altura mínima para la barra de navegación */
 }
 
 .logo {
@@ -152,15 +153,16 @@ header {
     height: 70vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr auto; /* Añade una tercera fila para el contenido */
     grid-template-areas:
         "logo"
-        "content";
+        "content"
+        "bottom"; /* Nueva área */
     align-items: center;
     text-align: center;
     color: var(--color-white);
     position: relative;
-    padding-top: 2rem; /* Añadido padding en la parte superior */
+    padding: 0; /* Quita el padding superior */
 }
 
 /* Overlay para mejor legibilidad del texto */
@@ -178,18 +180,27 @@ header {
     grid-area: content;
     position: relative;
     z-index: 10;
+    /* Añade estilos para centrar el contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+}
+
+.hero-content .tagline { /* Estilos para el tagline */
+    margin-bottom: 1rem; /* Espacio entre el tagline y el título */
 }
 
 .hero-content h2 {
     font-size: 4rem;
-    margin: 1rem 0;
+    margin: 0; /* Quita el margen predeterminado */
     color: var(--color-white);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem; /* Espacio entre el título y el botón */
 }
 
-.tagline {
-    font-size: 1.2rem;
-    font-style: italic;
+.hero-content .btn { /* Estilos para el botón */
+    margin-top: auto; /* Empuja el botón hacia abajo */
 }
 
 /* ======================== */
