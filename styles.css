@@ -115,19 +115,19 @@ header {
     width: 100%;
 }
 
-/* Estilos para el logo en el Navbar (Nuevo) */
+/* Estilos para el logo en el Navbar (Ajustado) */
 .navbar-logo {
     display: flex;
     align-items: center;
-    max-height: 50px; /* Limita la altura del contenedor */
+    max-height: 50px; /* Limita la altura del contenedor del logo */
 }
 
 .logo-image-nav {
-    max-height: 50px; /* ¡CLAVE! Tamaño máximo para el logo del navbar */
+    max-height: 50px; /* ¡CLAVE! Esto reduce el tamaño de la imagen en el navbar */
     width: auto;
     vertical-align: middle;
 }
-/* Estilos originales del logo, ajustados para el nav */
+/* Estilos originales de logo, si no los usas puedes eliminarlos */
 .logo {
     font-size: 1.5rem;
     margin: 0;
@@ -141,7 +141,100 @@ header {
 
 
 .nav-links {
-    list
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li a {
+    padding: 0.5rem 1rem;
+    display: block;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+    color: var(--color-bread-inner);
+}
+
+/* Menú Hamburguesa (Móvil) */
+.hamburger,
+.menu-toggle {
+    display: none;
+}
+
+/* ------------------------ */
+/* SECCIÓN HERO (INICIO) - LOGO COMO FONDO GRANDE Y CENTRADO */
+/* ------------------------ */
+.hero {
+    /* Usamos el logo como fondo */
+    background-image: url('imagenes/1760627696720.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    /* CAMBIO CLAVE: 'cover' para que la imagen cubra toda la sección y se vea detrás. */
+    background-size: cover; 
+    
+    /* Fondo gris que vimos en tu primera imagen */
+    background-color: #A9A9A9; 
+    
+    height: 60vh;
+    align-items: center;
+    text-align: center;
+    color: var(--color-white);
+    position: relative; 
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Overlay para mejor legibilidad del texto */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Mantenemos el overlay (la capa oscura) */
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1; /* Esto asegura que el overlay esté detrás del texto */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Poner el texto encima del overlay (y por ende, encima del logo de fondo) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content .tagline {
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    margin: 0;
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
+}
+
+.hero-content .btn {
+    margin-top: auto;
+}
+
+/* ------------------------ */
+/* SECCIÓN MENÚ DESTACADO */
+/* ------------------------ */
+.menu-section {
+    padding: 5rem 5%;
+    background-color: var(--color-white);
 }
 
 .menu-grid {
