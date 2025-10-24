@@ -1,13 +1,13 @@
 /* VARIABLES DE COLOR */
 :root {
-    --color-bread-crust: #8b4513; /* Marrón tierra, como la corteza del pan */
-    --color-bread-inner: #f4a460; /* Color cálido, como pan recién horneado */
-    --color-background: #fdf5e6; /* Beige muy claro */
+    --color-bread-crust: #8b4513;
+    --color-bread-inner: #f4a460;
+    --color-background: #fdf5e6;
     --color-text: #4a4a4a;
     --color-white: #ffffff;
-    --color-border: #ccc; /* Color para bordes */
-    --color-gray-light: #f0f0f0; /* Gris claro */
-    --color-gray-medium: #999; /* Gris medio */
+    --color-border: #ccc;
+    --color-gray-light: #f0f0f0;
+    --color-gray-medium: #999;
 }
 
 /* RESET Y FUENTES */
@@ -17,11 +17,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-.logo-image {
-    max-height: 50px; /* Ajusta la altura máxima según sea necesario */
-    width: auto; /* Permite que la imagen se ajuste proporcionalmente */
-    vertical-align: middle; /* Alinea verticalmente la imagen con el texto adyacente (si lo hay) */
 }
 
 body {
@@ -41,12 +36,12 @@ h3 {
 a {
     text-decoration: none;
     color: var(--color-bread-crust);
-    transition: color 0.3s ease; /* Transición suave para el color */
+    transition: color 0.3s ease;
 }
 
 a:hover,
 a:focus {
-    color: #6d350c; /* Marrón más oscuro al pasar el mouse o enfocar */
+    color: #6d350c;
 }
 
 .section-title {
@@ -66,7 +61,6 @@ a:focus {
     text-align: center;
     border: 2px solid transparent;
     cursor: pointer;
-    /* Añadido para mejor accesibilidad */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -80,11 +74,8 @@ a:focus {
 .btn.primary:hover,
 .btn.primary:focus {
     background-color: #6d350c;
-    /* Marrón más oscuro */
     outline: none;
-    /* Evita el outline predeterminado del navegador */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* Agrega una sombra sutil */
 }
 
 .btn.secondary {
@@ -98,9 +89,7 @@ a:focus {
     background-color: var(--color-bread-crust);
     color: var(--color-white);
     outline: none;
-    /* Evita el outline predeterminado del navegador */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* Agrega una sombra sutil */
 }
 
 /* ======================== */
@@ -118,12 +107,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 0.5rem 5%; /* Reducido el padding vertical */
 }
 
 .logo {
     font-size: 1.5rem;
     margin: 0;
+}
+
+.logo-image {
+    max-height: 35px;
+    width: auto;
+    vertical-align: middle;
 }
 
 .nav-links {
@@ -147,7 +142,6 @@ header {
 .hamburger,
 .menu-toggle {
     display: none;
-    /* Oculto en desktop */
 }
 
 /* ======================== */
@@ -155,14 +149,18 @@ header {
 /* ======================== */
 .hero {
     background: url('img/hero_pan.jpg') center/cover no-repeat;
-    /* Cambia 'hero_pan.jpg' por tu imagen */
     height: 70vh;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "logo"
+        "content";
     align-items: center;
     text-align: center;
     color: var(--color-white);
     position: relative;
+    padding-top: 2rem; /* Añadido padding en la parte superior */
 }
 
 /* Overlay para mejor legibilidad del texto */
@@ -177,6 +175,7 @@ header {
 }
 
 .hero-content {
+    grid-area: content;
     position: relative;
     z-index: 10;
 }
@@ -220,10 +219,8 @@ header {
 .menu-item:hover,
 .menu-item:focus {
     transform: scale(1.05);
-    /* Sutil efecto de escala al pasar el mouse */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    /* Sutil sombra al pasar el mouse */
-    outline: none; /* Elimina el contorno predeterminado al enfocar */
+    outline: none;
 }
 
 .menu-item img {
@@ -292,7 +289,7 @@ header {
 }
 
 .social-links a:hover,
-.social-links a:focus{
+.social-links a:focus {
     color: var(--color-bread-inner);
 }
 
