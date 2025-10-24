@@ -68,7 +68,7 @@ a:focus {
     appearance: none;
 }
 
-/* Estilo Primario (Explorar Menú ahora usa este) */
+/* Estilo Primario */
 .btn.primary {
     background-color: var(--color-bread-crust);
     color: var(--color-white);
@@ -95,8 +95,6 @@ a:focus {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Se elimina el estilo .btn.explore-menu-btn */
-
 /* ------------------------ */
 /* NAVEGACIÓN (HEADER) */
 /* ------------------------ */
@@ -117,108 +115,33 @@ header {
     width: 100%;
 }
 
+/* Estilos para el logo en el Navbar (Nuevo) */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    max-height: 50px; /* Limita la altura del contenedor */
+}
+
+.logo-image-nav {
+    max-height: 50px; /* ¡CLAVE! Tamaño máximo para el logo del navbar */
+    width: auto;
+    vertical-align: middle;
+}
+/* Estilos originales del logo, ajustados para el nav */
 .logo {
     font-size: 1.5rem;
     margin: 0;
 }
-
 .logo-image {
     max-height: 50px;
     width: auto;
     vertical-align: middle;
 }
+/* Fin de ajustes de logo de nav */
+
 
 .nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li a {
-    padding: 0.5rem 1rem;
-    display: block;
-    font-weight: 700;
-    transition: color 0.3s ease;
-}
-
-.nav-links li a:hover,
-.nav-links li a:focus {
-    color: var(--color-bread-inner);
-}
-
-/* Menú Hamburguesa (Móvil) */
-.hamburger,
-.menu-toggle {
-    display: none;
-}
-
-/* ------------------------ */
-/* SECCIÓN HERO (INICIO) - LOGO COMO FONDO COMPLETO */
-/* ------------------------ */
-.hero {
-    /* CAMBIO CLAVE: Usamos el logo como fondo */
-    background: url('imagenes/1760627696720.png') center center no-repeat; 
-    
-    /* Propiedades para que el logo abarque toda la sección */
-    background-size: cover; /* ¡CLAVE! Asegura que la imagen cubra todo el espacio */
-    background-color: #999; /* Fondo gris para logos transparentes o si la imagen no carga */
-    
-    height: 60vh;
-    align-items: center;
-    text-align: center;
-    color: var(--color-white);
-    position: relative; /* Establece el contexto para el z-index */
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-/* Overlay para mejor legibilidad del texto */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* Oscurecemos el fondo para que el texto blanco sea legible. Ajusta el valor 0.6 */
-    background-color: rgba(0, 0, 0, 0.6); 
-    z-index: 1; /* Poner el overlay detrás del texto */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; /* Poner el texto (h2, p, button) encima del overlay */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-content .tagline {
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-}
-
-.hero-content h2 {
-    font-size: 4rem;
-    margin: 0;
-    color: var(--color-white);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin-bottom: 1rem;
-}
-
-.hero-content .btn {
-    margin-top: auto;
-}
-
-/* ------------------------ */
-/* SECCIÓN MENÚ DESTACADO */
-/* ------------------------ */
-.menu-section {
-    padding: 5rem 5%;
-    background-color: var(--color-white);
+    list
 }
 
 .menu-grid {
