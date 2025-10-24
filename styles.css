@@ -70,7 +70,8 @@ a:focus {
 
 /* Estilo Primario (Explorar Menú) */
 .btn.primary {
-    background-color: var(--color-bread-crust); /* Marrón */
+    background-color: var(--color-bread-crust);
+    /* Marrón */
     color: var(--color-white);
 }
 
@@ -123,15 +124,18 @@ header {
 }
 
 .logo-image-nav {
-    max-height: 50px; /* ¡CLAVE! Esto reduce el tamaño de la imagen del navbar */
+    max-height: 50px;
+    /* ¡CLAVE! Esto reduce el tamaño de la imagen del navbar */
     width: auto;
     vertical-align: middle;
 }
+
 /* Estilos originales del logo */
 .logo {
     font-size: 1.5rem;
     margin: 0;
 }
+
 .logo-image {
     max-height: 50px;
     width: auto;
@@ -169,16 +173,15 @@ header {
     background-image: url('imagenes/1760627696720.png');
     background-position: center center;
     background-repeat: no-repeat;
-    
     /* ¡CLAVE! 'cover' para que cubra la zona y 'background-color' para el efecto gris */
-    background-size: cover; 
-    background-color: #A9A9A9; /* Fondo gris para que se note detrás del logo (si es transparente) */
-    
+    background-size: cover;
+    background-color: #A9A9A9;
+    /* Fondo gris para que se note detrás del logo (si es transparente) */
     height: 60vh;
     align-items: center;
     text-align: center;
     color: var(--color-white);
-    position: relative; 
+    position: relative;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -195,13 +198,15 @@ header {
     right: 0;
     bottom: 0;
     /* Mantenemos el overlay (la capa oscura) */
-    background-color: rgba(0, 0, 0, 0.4); 
-    z-index: 1; /* Esto asegura que el overlay esté detrás del texto */
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    /* Esto asegura que el overlay esté detrás del texto */
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* Poner el texto encima del overlay (y por ende, encima del logo de fondo) */
+    z-index: 2;
+    /* Poner el texto encima del overlay (y por ende, encima del logo de fondo) */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -267,6 +272,19 @@ header {
 .menu-item h3 {
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
+}
+
+/* Estilos para los enlaces en los menu-items */
+.menu-item a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del texto del contenedor */
+    display: block; /* Hace que el enlace ocupe todo el bloque */
+    border-radius: 8px; /* Opcional: añade bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.menu-item a:hover {
+    transform: scale(1.03); /* Ligeramente más grande al hacer hover */
 }
 
 /* ------------------------ */
@@ -385,297 +403,28 @@ header {
 
     .hamburger .line {
         display: block;
-        width: 25px; 
+        width: 25px;
         height: 3px;
         margin: 5px;
         background-color: var(--color-bread-crust);
         transition: all 0.3s ease;
     }
-    
+
     /* Mostrar el menú al marcar el checkbox */
-    .menu-toggle:checked ~ .nav-links {
+    .menu-toggle:checked~.nav-links {
         transform: translateX(0);
     }
-    
+
     /* Animación de la hamburguesa (opcional) */
-    .menu-toggle:checked ~ .hamburger .line:nth-child(1) {
+    .menu-toggle:checked~.hamburger .line:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
-    
-    .menu-toggle:checked ~ .hamburger .line:nth-child(2) {
+
+    .menu-toggle:checked~.hamburger .line:nth-child(2) {
         opacity: 0;
     }
-    
-    .menu-toggle:checked ~ .hamburger .line:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-}
-.nav-links li a {
-    padding: 0.5rem 1rem;
-    display: block;
-    font-weight: 700;
-    transition: color 0.3s ease;
-}
 
-.nav-links li a:hover,
-.nav-links li a:focus {
-    color: var(--color-bread-inner);
-}
-
-/* Menú Hamburguesa (Móvil) */
-.hamburger,
-.menu-toggle {
-    display: none;
-}
-
-/* ------------------------ */
-/* SECCIÓN HERO (INICIO) - LOGO COMO FONDO GRANDE Y CENTRADO */
-/* ------------------------ */
-.hero {
-    /* Usamos el logo como fondo */
-    background-image: url('imagenes/1760627696720.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    
-    /* CAMBIO CLAVE: 'cover' para que la imagen cubra toda la sección y se vea detrás. */
-    background-size: cover; 
-    
-    /* Fondo gris que vimos en tu primera imagen */
-    background-color: #A9A9A9; 
-    
-    height: 60vh;
-    align-items: center;
-    text-align: center;
-    color: var(--color-white);
-    position: relative; 
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-/* Overlay para mejor legibilidad del texto */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    /* Mantenemos el overlay (la capa oscura) */
-    background-color: rgba(0, 0, 0, 0.4); 
-    z-index: 1; /* Esto asegura que el overlay esté detrás del texto */
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2; /* Poner el texto encima del overlay (y por ende, encima del logo de fondo) */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-content .tagline {
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-}
-
-.hero-content h2 {
-    font-size: 4rem;
-    margin: 0;
-    color: var(--color-white);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    margin-bottom: 1rem;
-}
-
-.hero-content .btn {
-    margin-top: auto;
-}
-
-/* ------------------------ */
-/* SECCIÓN MENÚ DESTACADO */
-/* ------------------------ */
-.menu-section {
-    padding: 5rem 5%;
-    background-color: var(--color-white);
-}
-
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.menu-item {
-    text-align: center;
-    background-color: var(--color-background);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease-in-out;
-}
-
-.menu-item:hover,
-.menu-item:focus {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    outline: none;
-}
-
-.menu-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-}
-
-.menu-item h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-}
-
-/* ------------------------ */
-/* SECCIÓN SOBRE NOSOTROS */
-/* ------------------------ */
-.about-section {
-    padding: 5rem 5%;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-}
-
-.about-content {
-    flex: 1;
-}
-
-.about-image {
-    width: 40%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* ------------------------ */
-/* FOOTER Y CONTACTO */
-/* ------------------------ */
-.footer {
-    background-color: var(--color-bread-crust);
-    color: var(--color-white);
-    padding: 3rem 5%;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.footer .section-title {
-    color: var(--color-white);
-    text-align: left;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-}
-
-.social-links a {
-    color: var(--color-white);
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover,
-.social-links a:focus {
-    color: var(--color-bread-inner);
-}
-
-.copyright {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 1rem;
-    font-size: 0.9rem;
-}
-
-/* ------------------------ */
-/* MEDIA QUERIES (RESPONSIVIDAD) */
-/* ------------------------ */
-/* Estilos para Tablet y Móvil (Pantallas menores a 992px) */
-@media (max-width: 992px) {
-
-    /* Hero */
-    .hero-content h2 {
-        font-size: 3rem;
-    }
-
-    /* Sobre Nosotros */
-    .about-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-image {
-        width: 100%;
-        max-width: 450px;
-    }
-
-    /* Menú */
-    .nav-links {
-        position: fixed;
-        top: 65px;
-        /* Altura del header */
-        left: 0;
-        background-color: var(--color-bread-crust);
-        width: 100%;
-        height: 100vh;
-        flex-direction: column;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-        padding-top: 2rem;
-    }
-
-    .nav-links li a {
-        color: var(--color-white);
-        padding: 1rem 5%;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        text-align: center;
-    }
-
-    /* Menú Hamburguesa */
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-
-    .hamburger .line {
-        display: block;
-        width: 25px; 
-        height: 3px;
-        margin: 5px;
-        background-color: var(--color-bread-crust);
-        transition: all 0.3s ease;
-    }
-    
-    /* Mostrar el menú al marcar el checkbox */
-    .menu-toggle:checked ~ .nav-links {
-        transform: translateX(0);
-    }
-    
-    /* Animación de la hamburguesa (opcional) */
-    .menu-toggle:checked ~ .hamburger .line:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    
-    .menu-toggle:checked ~ .hamburger .line:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .menu-toggle:checked ~ .hamburger .line:nth-child(3) {
+    .menu-toggle:checked~.hamburger .line:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 }
