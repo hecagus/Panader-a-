@@ -50,7 +50,9 @@ a:focus {
     margin-bottom: 3rem;
 }
 
+/* ------------------------ */
 /* ESTILOS DE BOTONES */
+/* ------------------------ */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -66,6 +68,7 @@ a:focus {
     appearance: none;
 }
 
+/* Estilo Primario (Explorar Menú ahora usa este) */
 .btn.primary {
     background-color: var(--color-bread-crust);
     color: var(--color-white);
@@ -92,27 +95,11 @@ a:focus {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* NUEVO ESTILO: Botón "Explorar Menú" como zona gris */
-.btn.explore-menu-btn {
-    /* Color gris semi-transparente */
-    background-color: rgba(153, 153, 153, 0.6); 
-    color: var(--color-white);
-    border: 2px solid var(--color-white); 
-    /* Opcional: Un pequeño efecto de desenfoque */
-    backdrop-filter: blur(2px); 
-}
+/* Se elimina el estilo .btn.explore-menu-btn */
 
-.btn.explore-menu-btn:hover,
-.btn.explore-menu-btn:focus {
-    background-color: rgba(153, 153, 153, 0.8); 
-    color: var(--color-white);
-    outline: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-/* ======================== */
+/* ------------------------ */
 /* NAVEGACIÓN (HEADER) */
-/* ======================== */
+/* ------------------------ */
 header {
     background-color: var(--color-white);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -164,38 +151,27 @@ header {
     display: none;
 }
 
-/* ======================== */
-/* SECCIÓN HERO (INICIO) - CAMBIOS PRINCIPALES APLICADOS AQUÍ */
-/* ======================== */
+/* ------------------------ */
+/* SECCIÓN HERO (INICIO) - LOGO COMO FONDO COMPLETO */
+/* ------------------------ */
 .hero {
-    background: url('imagenes/hero_pan.jpg') center/cover no-repeat;
+    /* CAMBIO CLAVE: Usamos el logo como fondo */
+    background: url('imagenes/1760627696720.png') center center no-repeat; 
+    
+    /* Propiedades para que el logo abarque toda la sección */
+    background-size: cover; /* ¡CLAVE! Asegura que la imagen cubra todo el espacio */
+    background-color: #999; /* Fondo gris para logos transparentes o si la imagen no carga */
+    
     height: 60vh;
     align-items: center;
     text-align: center;
     color: var(--color-white);
-    position: relative; /* ¡CLAVE! Establece el contexto para el z-index */
+    position: relative; /* Establece el contexto para el z-index */
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-}
-
-/* Contenedor del logo: Posicionamiento para el efecto detrás del texto */
-.hero .logo-container {
-    position: absolute;
-    top: 50%; /* Centrado vertical */
-    left: 50%; /* Centrado horizontal */
-    transform: translate(-50%, -50%); /* Ajuste fino de centrado */
-    z-index: 1; /* ¡CLAVE! Lo pone detrás del hero-content y del overlay */
-    max-width: 60%; /* Ajusta el tamaño para que sea un logo grande de fondo */
-    opacity: 0.8; 
-}
-
-.hero .logo-image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
 }
 
 /* Overlay para mejor legibilidad del texto */
@@ -206,13 +182,14 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 2; /* Encima del logo, debajo del texto */
+    /* Oscurecemos el fondo para que el texto blanco sea legible. Ajusta el valor 0.6 */
+    background-color: rgba(0, 0, 0, 0.6); 
+    z-index: 1; /* Poner el overlay detrás del texto */
 }
 
 .hero-content {
     position: relative;
-    z-index: 3; /* ¡CLAVE! Lo pone encima del logo y del overlay */
+    z-index: 2; /* Poner el texto (h2, p, button) encima del overlay */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -236,9 +213,9 @@ header {
     margin-top: auto;
 }
 
-/* ======================== */
+/* ------------------------ */
 /* SECCIÓN MENÚ DESTACADO */
-/* ======================== */
+/* ------------------------ */
 .menu-section {
     padding: 5rem 5%;
     background-color: var(--color-white);
@@ -280,9 +257,9 @@ header {
     font-size: 1.5rem;
 }
 
-/* ======================== */
+/* ------------------------ */
 /* SECCIÓN SOBRE NOSOTROS */
-/* ======================== */
+/* ------------------------ */
 .about-section {
     padding: 5rem 5%;
     display: flex;
@@ -302,9 +279,9 @@ header {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* ======================== */
+/* ------------------------ */
 /* FOOTER Y CONTACTO */
-/* ======================== */
+/* ------------------------ */
 .footer {
     background-color: var(--color-bread-crust);
     color: var(--color-white);
@@ -344,9 +321,9 @@ header {
     font-size: 0.9rem;
 }
 
-/* ======================== */
+/* ------------------------ */
 /* MEDIA QUERIES (RESPONSIVIDAD) */
-/* ======================== */
+/* ------------------------ */
 /* Estilos para Tablet y Móvil (Pantallas menores a 992px) */
 @media (max-width: 992px) {
 
@@ -354,16 +331,6 @@ header {
     .hero-content h2 {
         font-size: 3rem;
     }
-    
-    /* Ajuste del logo para móvil, si es necesario, lo puedes reducir.
-       Si quieres que en móvil el logo vuelva a la esquina, usa esta regla:
-    .hero .logo-container {
-        top: 10px; 
-        left: 10px;
-        transform: translate(0, 0); 
-        max-width: 20%; 
-    } 
-    */
 
     /* Sobre Nosotros */
     .about-section {
@@ -406,7 +373,7 @@ header {
 
     .hamburger .line {
         display: block;
-        width: 25px; /* Tu código original estaba incompleto aquí. Asumo 25px. */
+        width: 25px; 
         height: 3px;
         margin: 5px;
         background-color: var(--color-bread-crust);
