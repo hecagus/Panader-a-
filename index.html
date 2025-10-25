@@ -1,114 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Panadería Artesanal de Karla</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panadería Artesanal de Karla</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="navbar-logo">
-        <img src="imagenes/1760627696720.png" alt="La Panadería de Karla" class="logo-image-nav">
-      </a>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <label for="menu-toggle" class="hamburger">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </label>
-      <ul class="nav-links">
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#menu">Nuestro Menú</a></li>
-        <li><a href="#about">Sobre Nosotros</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <p class="tagline">Horneado con el corazón y la tradición</p>
-        <h2>El Mejor Pan de la Región</h2>
-        <a href="#menu" class="btn primary">Explorar Menú</a>
-      </div>
-    </section>
-
-    <section id="menu" class="menu-section">
-      <h2 class="section-title">Nuestras Especialidades</h2>
-
-      <!-- BOTONES DE CATEGORÍAS -->
-      <div class="category-buttons">
-        <button class="btn secondary active" data-category="pan-dulce">Pan de Dulce</button>
-        <button class="btn secondary" data-category="pan-sal">Pan de Sal</button>
-        <button class="btn secondary" data-category="pasteles">Pasteles y Panqué</button>
-        <button class="btn secondary" data-category="galletas">Galletas</button>
-        <button class="btn secondary" data-category="temporada">Pan de Temporada</button>
-        <button class="btn secondary" data-category="eventos">Eventos</button>
-      </div>
-
-      <!-- PRODUCTOS -->
-      <div class="menu-grid">
-
-        <!-- PAN DE DULCE -->
-        <div class="menu-item" data-category="pan-dulce">
-          <a href="michiconchas.html">
-            <img src="imagenes/michiconchas.jpeg" alt="Michiconchas">
-            <h3>Michiconchas de Chocolate</h3>
-          </a>
-          <p>La favorita de siempre, con una costra crujiente de vainilla y chocolate.</p>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="imagenes/1760627696720.png" alt="Logo de la Panadería Artesanal de Karla">
+            <h1>Panadería Artesanal de Karla</h1>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="menu-item" data-category="pan-dulce">
-          <a href="roles_canela.html">
-            <img src="imagenes/IMG_20251023_111957752_HDR_AE.jpg" alt="Roles de Canela">
-            <h3>Roles de Canela</h3>
-          </a>
-          <p>Deliciosos roles de canela recién horneados con glaseado cremoso.</p>
-        </div>
+    <!-- SECCIÓN PRINCIPAL -->
+    <main id="inicio">
+        <section class="hero">
+            <h2>Pan hecho con amor y tradición</h2>
+            <p>Del horno a tu mesa, cada pieza está elaborada con ingredientes naturales y el toque artesanal que nos distingue.</p>
+        </section>
 
-        <div class="menu-item" data-category="pan-dulce">
-          <a href="Chocolatin.html">
-            <img src="imagenes/IMG_20251023_112148978_HDR_AE.jpg" alt="Pan de Chocolate con Almendras">
-            <h3>Pan de Chocolate con Almendras</h3>
-          </a>
-          <p>Un clásico francés con un toque gourmet que conquista los sentidos.</p>
-        </div>
+        <section id="productos" class="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="galeria">
+                <div class="producto">
+                    <img src="imagenes/baguette.jpg" alt="Baguette artesanal">
+                    <h3>Baguette Artesanal</h3>
+                    <p>Pan francés crujiente por fuera y suave por dentro. Ideal para acompañar cualquier comida.</p>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/concha_gatuna.jpg" alt="Concha Gatuna">
+                    <h3>Concha Gatuna</h3>
+                    <p>Pan de dulce en forma de gato, elaborado con ingredientes naturales. Una delicia divertida y gourmet.</p>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/pasticetas.jpg" alt="Galletas Pasticetas">
+                    <h3>Pasticetas</h3>
+                    <p>Galletas de mantequilla que se deshacen en la boca. Perfectas para acompañar un café o té.</p>
+                </div>
+                <div class="producto">
+                    <img src="imagenes/chocolatin.jpg" alt="Chocolatín Artesanal">
+                    <h3>Chocolatín Artesanal</h3>
+                    <p>Hojaldre dorado relleno de chocolate amargo. Irresistible para los amantes del cacao.</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="menu-item" data-category="pan-dulce">
-          <a href="Cuernitos.html">
-            <img src="imagenes/IMG_20251023_112115477_HDR_AE.jpg" alt="Cuernitos">
-            <h3>Cuernitos de Mantequilla Artesanales</h3>
-          </a>
-          <p>Perfectos para disfrutar solos o con café.</p>
-        </div>
-
-        <!-- PAN DE SAL -->
-        <div class="menu-item" data-category="pan-sal">
-          <a href="baguette.html">
-            <img src="imagenes/IMG-20251023-WA0003.jpg" alt="Baguette de Masa Madre">
-            <h3>Baguette de Masa Madre</h3>
-          </a>
-          <p>Corteza perfecta y miga alveolada. Ideal para acompañar tus comidas.</p>
-        </div>
-
-        <!-- GALLETAS -->
-        <div class="menu-item" data-category="galletas">
-          <a href="pasticetas.html">
-            <img src="imagenes/pastisetas.jpeg" alt="Pasticetas de Mantequilla">
-            <h3>Pasticetas</h3>
-          </a>
-          <p>Galletas de mantequilla que se deshacen en la boca.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="about" class="about-section">
-      <div class="about-content">
-        <h2 class="section-title">Nuestra Historia</h2>
+        <section id="nosotros" class="nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>En Panadería Artesanal de Karla, elaboramos pan con recetas tradicionales y técnicas artesanales, 
+              utilizando solo ingredientes naturales y locales. Creemos que el pan debe ser un placer   
+              <h2 class="section-title">Nuestra Historia</h2>
         <p>La panadería de Karla nació de la pasión por el <b>pan artesanal</b> y la tradición familiar.
           Cada pieza es horneada con ingredientes de alta calidad y recetas transmitidas por generaciones.</p>
       </div>
